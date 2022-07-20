@@ -1,4 +1,4 @@
-name: Run tests
+name: deply-on-droplet
 
 # Run this workflow whenever something new is pushed.
 on: push
