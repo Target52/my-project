@@ -1,4 +1,4 @@
-name: deploy-on-droplet
+name: deply-on-droplet
 
 # Run this workflow whenever something new is pushed.
 on: push
@@ -19,6 +19,7 @@ jobs:
         run: pytest
 
   deploy-on-droplet:
+    needs: run-tests
     runs-on: self-hosted
     needs:
       - build
