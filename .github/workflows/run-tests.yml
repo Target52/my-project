@@ -21,8 +21,6 @@ jobs:
   deploy-on-droplet:
     needs: run-tests
     runs-on: self-hosted
-    needs:
-      - build
     steps:
       - name: check out repo on vps
         uses: actions/checkout@v2
