@@ -35,5 +35,5 @@ jobs:
           cd /home/my-project/
           ls
           echo 'cd'
-          git pull
+          git pullorigin master
           systemctl restart nginx
