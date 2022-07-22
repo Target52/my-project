@@ -32,9 +32,7 @@ jobs:
           pip install --upgrade pip
           pip install gunicorn flask
           echo 'after flask'
-          cd /home/my-project/
-          ls
+          cd /home/
           echo 'cd'
-          git remote -v
-          git pull origin master
+          git pull
           systemctl restart nginx
