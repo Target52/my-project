@@ -31,7 +31,6 @@ jobs:
           pip install wheel
           pip install --upgrade pip
           pip install gunicorn flask
-          echo 'after flask'
           cd /home/my-project/
-          echo 'cd'
           git pull
+          systemctl restart nginx
