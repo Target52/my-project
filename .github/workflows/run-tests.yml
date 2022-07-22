@@ -31,5 +31,6 @@ jobs:
           pip install wheel
           pip install gunicorn flask
           cd /home/my-project/
+          git init
           git pull
           systemctl restart
