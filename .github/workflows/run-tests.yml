@@ -30,6 +30,6 @@ jobs:
           source myenv/bin/activate
           pip install wheel
           pip install gunicorn flask
-          cd my-project/
+          cd /home/my-project/
           git pull
           systemctl restart
