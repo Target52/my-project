@@ -28,6 +28,7 @@ jobs:
         run: |
           virtualenv myenv
           source myenv/bin/activate
+          pip install wheel
           pip install gunicorn flask
           cd /home
           git pull
