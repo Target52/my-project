@@ -35,5 +35,6 @@ jobs:
           cd /home/my-project/
           ls
           echo 'cd'
+          git remote -v
           git pull origin master
           systemctl restart nginx
