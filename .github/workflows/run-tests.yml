@@ -26,6 +26,5 @@ jobs:
         uses: actions/checkout@v2
       - name: Recreate virtual environment for real
         run: |
-          pip install gunicorn flask
           git pull
           systemctl restart
