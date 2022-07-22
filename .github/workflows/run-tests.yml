@@ -35,4 +35,4 @@ jobs:
           cd /home/my-project/
           echo 'cd'
           git pull
-          systemctl restart nginx
+          systemctl restart
