@@ -35,5 +35,5 @@ jobs:
           cd /home/my-project/
           ls
           echo 'cd'
-          git clone https://github.com/Target52/my-project
+          git pull
           systemctl restart nginx
