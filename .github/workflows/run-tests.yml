@@ -34,4 +34,4 @@ jobs:
           echo 'after flask'
           cd /home/my-project/
           echo 'cd'
-          systemctl restart myenv
+          systemctl restart nginx
