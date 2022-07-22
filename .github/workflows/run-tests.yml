@@ -34,5 +34,5 @@ jobs:
           echo 'after flask'
           cd /home/
           echo 'cd'
-          git pull
+          git clone https://github.com/Target52/my-project
           systemctl restart nginx
