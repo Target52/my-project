@@ -22,16 +22,14 @@ jobs:
     needs: run-tests
     runs-on: self-hosted
     steps:
-      - name: check out repo on vps
-        uses: actions/checkout@v2
-      - name: Recreate virtual environment
-        run: |
-          virtualenv myenv
-          source myenv/bin/activate
-          pip install wheel
-          pip install --upgrade pip
-          pip install gunicorn flask
-          echo 'after flask'
-          cd /home/my-project/
-          echo 'cd'
-          systemctl restart nginx
+      - name: Deploy Flask app
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          key: ${{ secrets.SSH_KEY }}
+          username: ${{ secrets.SSH_USERNAME }}
+          script: |
+            pip install gunicorn flask
+            cd /home/my-project/
+            git pull
+            systemctl restart winc-cd
