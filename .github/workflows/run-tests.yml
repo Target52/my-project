@@ -20,17 +20,21 @@ jobs:
 
   deploy-on-droplet:
     needs: run-tests
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
-      - name: check out repo on vps
-        uses: actions/checkout@v2
-      - name: Recreate virtual environment
-        run: |
-          virtualenv myenv
-          source myenv/bin/activate
-          pip install wheel
-          pip install --upgrade pip
-          pip install gunicorn flask
-          cd /home/my-project/
-          git pull
-          systemctl restart nginx
+      - name: flask
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          key: ${{ secrets.SSH_KEY }}
+          username: ${{ secrets.SSH_USERNAME }}
+          port: ${{ secrets.PORT }}
+          script: |
+            virtualenv myenv
+            source myenv/bin/activate
+            pip install wheel
+            pip install --upgrade pip
+            pip install gunicorn flask
+            cd /home/my-project/
+            git pull
+            systemctl restart nginx
